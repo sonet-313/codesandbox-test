@@ -1,17 +1,24 @@
-const func1 = function (str) {
-  return str;
+/**
+ * 分割代入
+ */
+
+const myProfile = {
+  name: "そね",
+  age: 24
 };
 
-console.log(func1("func1です"));
+const message1 = `名前は${myProfile.name}です。年齢は${myProfile.age}です。`;
+console.log(message1);
 
-const func2 = (str) => {
-  return str;
-};
+const { name, age } = myProfile;
+const message2 = `名前は${name}です。年齢は${age}です。`;
+console.log(message2);
 
-console.log(func2("func2です"));
+const myProfileArray = ["そ", 24];
 
-const sum = (num1, num2) => {
-  return num1 + num2;
-};
+const message3 = `名前は${myProfileArray[0]}です。年齢は${myProfileArray[1]}です。`;
+console.log(message3);
 
-console.log(sum(1, 2));
+const [nam, ag] = myProfileArray;
+const message4 = `名前は${nam}です。年齢は${ag}です。`;
+console.log(message4);
