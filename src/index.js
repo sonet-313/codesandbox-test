@@ -1,33 +1,31 @@
 /**
- * スプレット構文
+ * mapやfilterを使った配列の処理
  */
+const nameArr = ["田中", "山田", "そね"];
+// for (let index = 0; index < nameArr.length; index++) {
+//   console.log(nameArr[index]);
+// }
 
-//配列の展開
-// const arr1 = [1,2,3];
-// console.log(arr1[0]);
-// console.log(...arr1);
+// const nameArr2 = nameArr.map((name) => {
+//   return name;
+// });
 
-// const sumFunc = (num1, num2) => console.log(num1 + num2);
-// sumFunc(arr1[0], arr1[1]);
-// sumFunc(...arr1);
+// console.log(nameArr2);
 
-//まとめる
-// const arr2 = [1,2,3,4,5];
-// const [num1, num2, ...arr3] = arr2;
-// console.log(num1);
-// console.log(num2);
-// console.log(arr3);
+nameArr.map((name, index) => console.log(`${index + 1}番目は${name}です`));
 
-//配列のコピー、結合
-const arr4 = [10, 20];
-const arr5 = [30, 40];
+const numArr = [1, 2, 3, 4, 5];
+const newNumArr = numArr.filter((num) => {
+  return num % 2 === 1;
+});
 
-const arr6 = [...arr4];
-const arr7 = arr4;
-arr4[0] = 0;
-console.log(arr4);
-console.log(arr6);
-console.log(arr7);
+console.log(newNumArr);
 
-const arr8 = [...arr4, ...arr5];
-console.log(arr8);
+const newNameArray = nameArr.map((name) => {
+  if (name === "そね") {
+    return name;
+  } else {
+    return `${name}さん`;
+  }
+});
+console.log(newNameArray);
